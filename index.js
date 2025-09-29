@@ -2,6 +2,9 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
+const STRIPE_API_KEY = "sk_test_4eC39HqLyjWDarjtT1zdp7dc"; // Chuỗi trông giống một API key
+
+
 app.get('/', (req, res) => {
   res.send('Hello, CI/CD World!');
 });
