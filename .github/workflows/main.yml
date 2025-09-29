@@ -25,7 +25,13 @@ jobs:
 
       - name: Run tests
         run: npm test
-
+        
+      - name: Run Snyk to check for vulnerabilities
+        uses: snyk/actions/node@master # Sử dụng Snyk Action
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }} # Lấy token từ GitHub Secrets
+        with:
+          command: monitor
   # Job 2: Build và Đẩy Docker image
   build_and_push_docker:
     needs: build_and_test # Job này chỉ chạy sau khi 'build_and_test' thành công
