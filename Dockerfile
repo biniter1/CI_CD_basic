@@ -4,10 +4,10 @@ WORKDIR /app
 
 COPY package*.json ./
 
-Run nmp install
+Run npm install
 
 COPY . .
 
 EXPOSE 3000
 
-CMD ["nmp","start"]
+CMD ["npm","start"]
